@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower of Hanoi</title>
+    <style>
+        .tower {
+            display: inline-block;
+            width: 20px;
+            height: 150px;
+            background-color: gray;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tower of Hanoi</h1>
+
+    <div id="towerA" class="tower"></div>
+    <div id="towerB" class="tower"></div>
+    <div id="towerC" class="tower"></div>
+
+    <button onclick="moveDisk()">Move Disk</button>
+
+    <script>
+        const towers = {
+            A: [],
+            B: [],
+            C: []
+        };
+
+        const numberOfDisks = 3;
+
+        function initializeGame() {
+            for (let i = numberOfDisks; i > 0; i--) {
+                towers.A.push(i);
+            }
+        }
+
+        function moveDisk() {
+            const sourceTower = 'A';
+            const destinationTower = 'C';
+
+            if (towers[sourceTower].length === 0) {
+                alert("Source tower is empty.");
+                return;
+            }
+
+            const disk = towers[sourceTower].pop();
+
+            if (towers[destinationTower].length === 0 || disk < towers[destinationTower][towers[destinationTower].length - 1]) {
+                towers[destinationTower].push(disk);
+                updateTowers();
+            } else {
+                alert("Invalid move. A larger disk cannot be placed on a smaller one.");
+                towers[sourceTower].push(disk);
+            }
+        }
+
+        function updateTowers() {
+            const towerElements = document.querySelectorAll('.tower');
+
+            towerElements.forEach((tower, index) => {
+                const towerId = String.fromCharCode(65 + index);
+                const towerContent = towers[towerId].reverse();
+
+                tower.innerHTML = '';
+
+                towerContent.forEach(disk => {
+                    const diskElement = document.createElement('div');
+                    diskElement.className = 'disk';
+                    diskElement.style.width = `${disk * 30}px`;
+                    tower.appendChild(diskElement);
+                });
+            });
+        }
+
+        window.onload = () => {
+            initializeGame();
+            updateTowers();
+        };
+    </script>
+</body>
+</html>
