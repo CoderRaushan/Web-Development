@@ -1,0 +1,10 @@
+.content
+{
+background-color: blue;
+
+}
+.bar1,.bar2,.bar3
+{
+height: 15px;
+width: 6px;
+}
