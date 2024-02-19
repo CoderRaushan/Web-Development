@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Feedback Form</title>
+    <style>
+        label 
+        {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Feedback Form</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label>Rating:</label>
+        <label for="excellent">Excellent</label>
+        <input type="radio" id="excellent" name="rating" value="excellent"> 
+        <label for="good">Good</label>
+        <input type="radio" id="good" name="rating" value="good"> 
+        <label for="average">Average</label>
+        <input type="radio" id="average" name="rating" value="average"> 
+        <label for="bad">Bad</label>
+        <input type="radio" id="bad" name="rating" value="bad">
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" rows="4 " cols="50"></textarea>
+        <label for="subscribe">Subscribe to newsletter:</label>
+        <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
