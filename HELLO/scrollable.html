@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .scrollable-div {
+            width: 30%; /* Set your desired width */
+            height: 80px; /* Set your desired height */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scrollable-content 
+        {
+            white-space: nowrap;
+            display: flex;
+        }
+
+        .scroll-button 
+        {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: #ccc;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .scroll-left {
+            left: 0;
+        }
+
+        .scroll-right {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="scrollable-div">
+    <button class="scroll-button scroll-left" onclick="scrollContent(-50)">←</button>
+    <div class="scrollable-content" id="scrollableContent">
+        <!-- Your various elements go here -->
+        <span>Element 1</span>
+        <span>Element 1</span>
+        <span>Element 1</span>
+        <span>Element 1</span>
+        <span>Element 2</span>
+        <span>Element 3</span>
+        <!-- Add more elements as needed -->
+    </div>
+    <button class="scroll-button scroll-right" onclick="scrollContent(50)">→</button>
+</div>
+
+<script>
+    function scrollContent(scrollAmount) {
+        var scrollableContent = document.getElementById('scrollableContent');
+        scrollableContent.scrollLeft += scrollAmount;
+    }
+</script>
+
+</body>
+</html>

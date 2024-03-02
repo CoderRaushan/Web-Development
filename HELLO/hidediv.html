@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ul {
+            height: 400px;
+            width: 400px;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: absolute;
+            margin-left: 20rem;
+        } */
+        ul
+        {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="div1"> -->
+
+    </div>
+    <ul class="div1">
+        <li><a href="">a</a></li>
+        <li><a href="">a</a></li> 
+        <li><a href="">a</a></li>
+    </ul>
+    <script>
+        window.onload = function () {
+            var hidediv = document.querySelector('.div1');
+            document.onclick = function (event) {
+                if (event.target !== hidediv) {
+                    hidediv.style.left = "-100%";
+                }
+            };
+        };
+    </script>
+    <script>
+        // Assuming your navigation list has an ID of "navList"
+const navList = document.getElementById(".div1");
+
+// Add an event listener to the document
+document.addEventListener("click", (event) => {
+  // Check if the clicked element is not part of the navigation list
+  if (!navList.contains(event.target)) {
+    // Set the left position of the navigation list back to -100%
+    navList.style.left = "-100%";
+  }
+});
+
+    </script>
+</body>
+
+</html>
