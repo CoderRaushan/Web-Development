@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        body 
+        {
+           
+            background-color: #FCFBF4;
+            margin: 0;
+            padding: 0;
+        }
+        .main
+        {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box
+        {
+            width: auto;
+            height: 500px;
+            padding: 0 3rem 0 2rem ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 3px solid blue ;
+            margin-top: 5rem;
+            background-color: rgb(222, 188, 15);
+            border-radius: 2rem;
+            box-shadow:  5px 5px 8px black;
+        }
+
+        h1 {
+            background-color: rgb(0, 0, 0);
+            padding: 20px;
+            color: yellow;
+            border-radius: 70px;
+            margin: 10px 0px;
+            cursor: pointer;
+        }
+
+        #yy {
+            color: white;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            height: 80px;
+            border-radius: 100px;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        h1 {
+            text-align: left;
+            justify-content: right;
+            color: #333;
+            height: 80px;
+            border: solid rgb(255, 255, 255);
+        }
+
+        .name {
+            position: absolute;
+            margin-left: 0px;
+            padding-top: 90px;
+            margin-top: -60px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        form {
+            margin-top: 20px;
+            margin: 30px 30px;
+            color: rgb(0, 0, 0);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 4px;
+            margin-bottom: 10px;
+            border-radius: 30px;
+            background-color: rgb(150, 200, 241);
+        }
+
+        #sgpabtn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 6px 10px 6px 10px;
+            border: solid rgb(255, 255, 255);
+            border-radius: 20px;
+            cursor: pointer;
+            background-color: black;
+            margin-bottom: -1rem;
+        }
+        .home {
+            text-decoration: none;
+            background-color: black;
+            color: yellow;
+            position: absolute;
+            padding: 0px 8px;
+            margin: -5px 80%;
+            border-radius: 20px;
+            float: right;
+            margin-right: 70px;
+            border: solid white 2px;
+        }
+
+        .home1 {
+            text-decoration: none;
+            background-color: black;
+            color: yellow;
+            position: absolute;
+            padding: 0px 8px;
+            margin: -5px 8%;
+            border-radius: 20px;
+            display: inline-block;
+            border: solid white 2px;
+        }
+
+        .home1:hover {
+            transition: transform 0.5s;
+            transform: scale(1.05);
+        }
+
+        .home:hover {
+            transition: transform 0.5s;
+            transform: scale(1.05);
+        }
+
+        .auto {
+            margin: -60px 30px;
+        }
+
+        input:hover {
+            transition: transform 0.5s;
+            transform: scale(1.1);
+        }
+
+        h1:hover {
+            transition: transform 0.5s;
+            transform: scale(1.01);
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+
+        #sgpaValue {
+            font-size: 18px;
+            color: #333;
+        }
+
+        p {
+            margin: 0px 80px 80px;
+        }
+
+        #fs {
+            /* background-color: #e5d847; */
+            background-color: rgb(188, 144, 229);
+        }
+
+        #noshow 
+        {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+   <div class="main">
+    <form method="post">
+        <div class="box">
+         <table>
+             <div>
+               <tr>
+                   <td><label for="marks0">DSA:</label></td>
+                   <td><input type="number" id="dsa" placeholder="Enter internel + external" name="DSA"></td>
+               </tr>
+             </div>
+              <div>
+               <tr>
+                   <td><label for="marks1">OOPS:</label></td>
+                   <td><input type="number" id="oops" placeholder="Enter internel + external" name="OOPs"></td>
+               </tr>
+              </div>
+             <div>
+               <tr>
+                   <td><label for="marks2">DCLD:</label></td>
+                   <td><input type="number" id="dcld" placeholder="Enter internel + external" name="DCLD"></td>
+               </tr>
+             </div>
+            <div>
+               <tr>
+                   <td><label for="marks3">DCCN:</label></td>
+                   <td><input type="number" id="dccn" placeholder="Enter internel + external" name="DCCN"></td>
+               </tr>
+            </div>
+              <div>
+               <tr>
+                   <td><label for="marks4">PPLE:</label></td>
+                   <td><input type="number" id="pple" placeholder="Enter internel + external" name="PPLE"></td>
+               </tr>
+              </div>
+             <div>
+               <tr>
+                   <td><label for="marks5">DSA-Lab:</label></td>
+                   <td><input type="number" id="dsalab" placeholder="Enter internel + external" name="DSA-Lab"></td>
+               </tr>
+             </div>
+              <div>
+               <tr>
+                   <td><label for="marks6">OOPS-Lab:</label></td>
+                   <td><input type="number" id="oopslab" placeholder="Enter internel + external" name="OOPs-Lab"></td>
+               </tr>
+              </div>
+              <div>
+               <tr>
+                   <td><label for="marks7">DCCN-Lab:</label></td>
+                   <td><input type="number" id="dccnlab" placeholder="Enter internel + external" name="DCCN-Lab"></td>
+               </tr>
+              </div>
+            <div>
+               <tr>
+                   <td><label for="marks8">DCLD-Lab:</label></td>
+                   <td><input type="number" id="dcldlab" placeholder="Enter internel + external" name="DCLD-Lab"></td>
+               </tr>
+            </div>
+             <div>
+               <tr>
+                   <td><label for="marks9">Seminar:</label></td>
+                   <td><input type="number" id="seminar" placeholder="Enter internel" name="Seminar"></td>
+               </tr>
+             </div>
+             
+           </table>
+           <a id="sgpabtn" onclick="calculateSGPA()">calculate sgpa</a>
+        </div>
+       
+     </form> 
+   </div>
+
+
+    <script>
+        function calculateSGPA() {
+            // accessing all input fields 
+            let dsa = (document.getElementById("dsa").value);
+            let oops = (document.getElementById("oops").value);
+            let dcld = (document.getElementById("dcld").value);
+            let dccn = (document.getElementById("dccn").value);
+            let pple = (document.getElementById("pple").value);
+            let dsalab = (document.getElementById("dsalab").value);
+            let oopslab = (document.getElementById("oopslab").value);
+            let dccnlab = (document.getElementById("dccnlab").value);
+            let dcldlab = (document.getElementById("dcldlab").value);
+            let seminar = (document.getElementById("seminar").value);
+
+            // now  calculating percentage of each subject including lab
+            dsa = dsa / 100 * 100;
+            oops = oops / 100 * 100;
+            dcld = dcld / 100 * 100;
+            dccn = dccn / 100 * 100;
+            pple = pple / 100 * 100;
+            dsalab = dsalab / 50 * 100;
+            oopslab = oopslab / 50 * 100;
+            dccnlab = dccnlab / 50 * 100;
+            dcldlab = dcldlab / 50 * 100;
+            seminar = seminar / 50 * 100
+            // now calculating grade point form persentage
+            let dsagrade =  Math.floor(dsa / 10) + 1;
+            let oopsgrade =  Math.floor(oops / 10) + 1;
+            let dcldgrade =  Math.floor(dcld / 10) + 1;
+            let dccngrade =  Math.floor(dccn / 10) + 1;
+            let pplegrade =  Math.floor(pple / 10) + 1;
+            let dsalabgrade =  Math.floor(dsalab / 10) + 1;
+            let oopslabgrade =  Math.floor(oopslab / 10) + 1;
+            let dccnlabgrade =  Math.floor(dccnlab / 10) + 1;
+            let dcldlabgrade =  Math.floor(dcldlab / 10) + 1;
+            let seminargrade =  Math.floor(seminar / 10) + 1;
+
+            // multiplying grade and credit point
+            let dsaresult = dsagrade * 3;
+            let oopsresult = oopsgrade * 3;
+            let dcldresult = dcldgrade * 3;
+            let dccnresult = dccngrade * 3;
+            let ppleresult = pplegrade * 3;
+            let dsalabresult = dsalabgrade * 1;
+            let oopslabresult = oopslabgrade * 1;
+            let dccnlabresult = dccnlabgrade * 1;
+            let dcldlabresult = dcldlabgrade * 1;
+            let seminarresult = seminargrade * 1;
+            //   adding all results
+            let sgpares = (dsaresult + oopsresult + dcldresult + dccnresult + ppleresult + dsalabresult + oopslabresult + dccnlabresult + dcldlabresult + seminarresult) / 20;
+            let sgpabtn = document.getElementById("sgpabtn");
+            sgpabtn.innerText = "SGPA : " + sgpares;
+        }
+    </script>
+</body>
+
+</html>
