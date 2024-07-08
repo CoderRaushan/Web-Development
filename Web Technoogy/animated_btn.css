@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    text-align: center;
+    position: relative;
+}
+
+#confetti-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#confetti-button:hover {
+    background-color: #0056b3;
+}
+
+#congrats-message {
+    display: none;
+    font-size: 24px;
+    color: #007bff;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#congrats-message.show {
+    display: block;
+    opacity: 1;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+         padding: 0;
+         margin: 0;
+         box-sizing: border-box;
+        }
+        #btn
+        {
+            margin-top: 20rem;
+            margin-left: 40rem;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            font-size: 2rem;
+            padding: 0 3px 0 6px ;
+            /* padding: 1rem; */
+            background-color: blue;
+            border: none;
+            position: relative; 
+            overflow: hidden;
+            color: black;
+            border-radius: 20px;
+            
+        }
+        #btn::before{
+            content: "";
+            position: absolute;
+            height: 300%;
+            width: 30%;
+            background:linear-gradient(
+                rgb(170, 255, 0),white
+            );
+            animation: circle  4s  linear infinite;
+            rotate: 45deg;
+
+        }
+        #btn::after{
+            content: "heit me";
+            position: absolute;
+            inset: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color:blue;
+            color: white;
+            border-radius: 18px;
+            font-size: 1rem;
+        }
+        @keyframes circle {
+            to{
+                transform: rotate(0deg);
+            }
+            from{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">hit me</button>
+</body>
+</html>

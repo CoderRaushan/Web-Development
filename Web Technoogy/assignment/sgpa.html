@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="cgpa"></p>
+    <script>
+        let sgpa1 = 8.20;
+        let sgpa2 = 9.38;
+        let sgpa3 = 9.10;
+        let sgpa4 = 8.96;
+        // let sgpa5 = 9.30;
+
+        let credit1 = 20;
+        let credit2 = 21;
+        let credit3 = 21;
+        let credit4 = 23;
+        // let credit5 = 23;
+        let cgpa = ((sgpa1*credit1)+(sgpa2*credit2)+(sgpa3*credit3)+(sgpa4*credit4))/(credit1+credit2+credit3+credit4);
+        let p=document.getElementById("cgpa");
+       sg    p.innerText = cgpa;
+    </script>
+</body>
+</html>

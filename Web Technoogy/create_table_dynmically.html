@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Table Row</title>
+  <style>
+    /* Optional: Add some basic styling */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    th {
+      text-align: left;
+    }
+    .form-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .form-container label {
+      width: 50px;
+    }
+    .form-container input {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Add Table Row</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      </tbody>
+  </table>
+  <div class="form-container">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter Name">
+  </div>
+  <div class="form-container">
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" placeholder="Enter Age">
+  </div>
+  <button onclick="addRow()">Add Row</button>
+  <script>
+    function addRow() {
+      // Get input values
+      const name = document.getElementById("name").value;
+      const age = document.getElementById("age").value;
+
+      // Validate input (optional)
+
+      // Create new table row element
+      const newRow = document.createElement("tr");
+
+      // Create new table cell elements for Name and Age
+      const nameCell = document.createElement("td");
+      const ageCell = document.createElement("td");
+
+      // Set content of table cells
+      nameCell.textContent = name;
+      ageCell.textContent = age;
+
+      // Add cells to the new row
+      newRow.appendChild(nameCell);
+      newRow.appendChild(ageCell);
+
+      // Get the table body element
+      const tableBody = document.querySelector("tbody");
+
+      // Append the new row to the table body
+      tableBody.appendChild(newRow);
+
+      // Clear input fields (optional)
+      document.getElementById("name").value = "";
+      document.getElementById("age").value = "";
+    }
+  </script>
+</body>
+</html>
