@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [href]{
+            background-color:yellow;
+        }   
+        table {
+            position: absolute;
+            left: 20rem;
+        }
+
+        td {
+            text-align: center;
+            /* padding: 10px; */
+        }
+
+        th {
+            text-align: center;
+            /* padding: 10px; */
+
+        }
+
+        .t1 {
+            background-color: yellow;
+        }
+
+        .t2 {
+            background-color: black;
+            color: wheat;
+        }
+
+        .t3 {
+            background-color: blue;
+        }
+
+        tr:nth-child(even) {
+            background-color: blue;
+        }
+
+        td:nth-child(even) {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="black">
+        <tr>
+            <th class="t1">
+                head1
+            </th>
+            <th class="t2">
+                head2
+            </th>
+            <th class="t3">
+                head3
+            </th>
+        </tr>
+
+        <tr>
+            <td>
+                cell 1
+            </td>
+            <td colspan="2">
+                colspan 2
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2">
+                rowspan2
+            </td>
+            <td>
+                hello
+            </td>
+            <td>
+                hi
+            </td>
+        </tr>
+        <tr>
+            <td>
+                cell
+            </td>
+            <td>
+                cell
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">colspan3</td>
+        </tr>
+        <tr>
+            <td>hello</td>
+            <td>hello</td>
+            <td>hello</td>
+        </tr>
+        <tr>
+            <td>hello</td>
+            <td>hello</td>
+            <td>hello</td>
+        </tr>
+        <tr>
+            <td>hello</td>
+            <td>hello</td>
+            <td>hello</td>
+        </tr>
+        <tr>
+            <td>hello</td>
+            <td>hello</td>
+            <td>hello</td>
+        </tr>
+    </table>
+    <div>
+        <h1>Example Page</h1>
+        <p>This is a paragraph with a <a href="https://example.com">link</a>.</p>
+        <a href="https://example.com">This is another link</a>
+        <p>This is a paragraph without a link.</p>
+    </div>
+</body>
+</html>

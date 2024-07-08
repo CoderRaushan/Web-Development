@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Text Wrap and Multiple Backgrounds</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .text-wrap {
+            white-space: normal; 
+            /* Normal white-space handling */
+            word-wrap: break-word; /* Allows long words to break and wrap onto the next line */
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 300px;
+            margin: 20px;
+        }
+        .multiple-backgrounds {
+            background: url('https://via.placeholder.com/150/0000FF/FFFFFF?text=First+Background'), 
+                        url('https://via.placeholder.com/150/FF0000/FFFFFF?text=Second+Background');
+            background-repeat: no-repeat, no-repeat;
+            background-position: left top, right bottom;
+            height: 300px;
+            width: 300px;
+            border: 1px solid #ddd;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-wrap">
+        This is an example paragraph demonstrating text wrapping. 
+        This longwordshouldwraptothenextlineifthecontainerisnarrowenough.
+    </div>
+    <div class="multiple-backgrounds">
+        <p style="padding: 10px;">
+            This div has multiple backgrounds applied using CSS3.
+        </p>
+    </div>
+</body>
+</html>

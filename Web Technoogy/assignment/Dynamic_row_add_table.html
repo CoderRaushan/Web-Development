@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table
+        {
+            width: 400px;
+        }
+        td,th{
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>add table row in the table</h2>
+    <table border="black" id="table1">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Age
+            </th>
+        </tr>
+    </table>
+    <button id="rowbtn">Add Row</button>
+    <input type="text" name="" id="inp1">
+    <input type="text" name="" id="inp2">
+</body>
+<script>
+    function addrow(inp1 ,inp2)
+    {
+        let table=document.getElementById("table1");
+        let newrow=table.insertRow();
+        let cell1=newrow.insertCell(0);
+        let cell2=newrow.insertCell(1);
+        cell1.innerHTML=inp1;
+        cell2.innerHTML=inp2;
+    }
+   let addbtn=document.getElementById("rowbtn");
+   addbtn.addEventListener("click",()=>
+   {
+      let inp1=document.getElementById("inp1").value;
+      let inp2=document.getElementById("inp2").value;
+      addrow(inp1,inp2);
+   });
+</script>
+</html>

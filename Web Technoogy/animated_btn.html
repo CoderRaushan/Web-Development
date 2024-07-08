@@ -1,0 +1,78 @@
+\<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confetti Button</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            text-align: center;
+            position: relative;
+        }
+
+        #confetti-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #confetti-button:hover {
+            background-color: #0056b3;
+        }
+
+        #congrats-message {
+            display: none;
+            font-size: 24px;
+            color: #007bff;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #congrats-message.show {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button id="confetti-button">🎉 Like</button>
+        <div id="congrats-message">Congratulations!</div>
+    </div>
+    <script src="https://cdn.skypack.dev/canvas-confetti@1"></script>
+    <script>
+        document.getElementById('confetti-button').addEventListener('click', () => {
+            // Trigger confetti
+            confetti({
+                particleCount: 150,
+                spread: 60,
+            });
+
+            // Show the congratulatory message
+            const congratsMessage = document.getElementById('congrats-message');
+            congratsMessage.classList.add('show');
+
+            // Remove the message after a while
+            setTimeout(() => {
+                congratsMessage.classList.remove('show');
+            }, 3000); // The message will be visible for 3 seconds
+        });
+    </script>
+</body>
+</html>
