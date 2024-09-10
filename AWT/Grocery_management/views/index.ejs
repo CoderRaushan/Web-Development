@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Data</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Table Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <!-- Adjust these headers based on your actual table columns -->
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Other Column</th>
+            </tr>
+        </thead>
+        <tbody>
+            <a href="/validateAdmin">Add items</a>
+            <% admins.forEach(admin => { %>
+                <tr>
+                    <td><%= admin.id %></td>
+                    <td><%= admin.username %></td>
+                    <td><%= admin.email %></td>
+                    <td><%= admin.other_column %></td> <!-- Adjust as needed -->
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>

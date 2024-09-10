@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Add New Item</h2>
+    <form action="/admin/newItem" method="POST">
+        <label for="item_id">Item Id:</label>
+        <input type="text" name="item_id" id="item_id" required>
+
+        <label for="item_name">Item Name:</label>
+        <input type="text" name="item_name" id="item_name" required>
+        <button type="submit">Add Item</button>
+    </form>
+</body>
+</html>

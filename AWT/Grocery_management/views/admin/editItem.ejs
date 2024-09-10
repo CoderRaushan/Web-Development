@@ -1,0 +1,12 @@
+<%- include('../layouts/layout', { title: 'Edit Item' }) %>
+
+<h2>Edit Item Expense</h2>
+<form action="/admin/edit-expense" method="POST">
+    <label for="item_id">Item ID:</label>
+    <input type="number" name="item_id" id="item_id" required>
+
+    <label for="item_expences">New Expense:</label>
+    <input type="number" name="item_expences" id="item_expences" required>
+
+    <button type="submit">Edit Expense</button>
+</form>
