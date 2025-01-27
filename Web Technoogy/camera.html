@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner</title>
+    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+    <style>
+        #reader {
+            width: 100%;
+            height: 500px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>QR Code Scanner</h1>
+    <div id="reader"></div>
+    <p id="result"></p>
+
+    <script>
+        // Wait for the DOM to fully load
+        window.onload = () => {
+            // Create the Html5Qrcode object
+            const html5QrCode = new Html5Qrcode("reader");
+
+            // Function to start scanning
+            const startScanning = () => {
+                const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+                    // Handle the decoded text here
+                    document.getElementById("result").innerText = `QR Code scanned: ${decodedText}`;
+                    // Stop scanning after the first scan
+                    html5QrCode.stop().catch(err => {
+                        console.error('Error stopping the scan: ', err);
+                    });
+                };
+
+                const qrCodeErrorCallback = (errorMessage) => {
+                    // Handle error (optional)
+                    console.warn(`QR Code scan error: ${errorMessage}`);
+                };
+
+                // Start the QR code scanning process
+                html5QrCode.start(
+                    { facingMode: "environment" }, // Use the back camera
+                    {
+                        fps: 10,          // Frame rate
+                        qrbox: 250,      // Size of the scanning box
+                    },
+                    qrCodeSuccessCallback,
+                    qrCodeErrorCallback
+                ).catch(err => {
+                    console.error('Error starting the scan: ', err);
+                });
+            };
+
+            // Start scanning
+            startScanning();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tcs 25 Array questions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 50%;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .question {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .question input {
+      margin-right: 10px;
+    }
+
+    .question label {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .reset-btn {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .reset-btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Question Checklist</h1>
+    <div id="question-list"></div>
+  </div>
+
+  <script>
+    const questions = [
+  "1: Find_the_smallest_number_in_an_array.cpp",
+  "2: Find_the_largest_number_in_an_array.cpp",
+  "3: Second_Smallest_and_Second_Largest_element_in_an_array.cpp",
+  "4: Reverse_a_given_array.cpp",
+  "5: Count_frequency_of_each_element_in_an_array.cpp",
+  "6: Rearrange_array_in_increasing-decreasing_order.cpp",
+  "7: Calculate_sum_of_the_elements_of_the_array.cpp",
+  "8: Rotate_array_by_K_elements_-_Block_Swap_Algorithm.cpp",
+  "9: Average_of_all_elements_in_an_array.cpp",
+  "10: Find_the_median_of_the_given_array.cpp",
+  "11: Remove_duplicates_from_a_sorted_array.cpp",
+  "12: Remove_duplicates_from_unsorted_array.cpp",
+  "13: Adding_Element_in_an_array.cpp",
+  "14: Find_all_repeating_elements_in_an_array.cpp",
+  "15: Find_all_non-repeating_elements_in_an_array.cpp",
+  "16: Find_all_symmetric_pairs_in_array.cpp",
+  "17: Maximum_product_subarray_in_an_array.cpp",
+  "18: Replace_each_element_of_the_array_by_its_rank_in_the_array.cpp",
+  "19: Sorting_elements_of_an_array_by_frequency.cpp",
+  "20: Rotation_of_elements_of_array-_left_and_right.cpp",
+  "21: Finding_equilibrium_index_of_an_array.cpp",
+  "22: Finding_Circular_rotation_of_an_array_by_K_positions.cpp",
+  "23: Sort_an_array_according_to_the_order_defined_by_another_array.cpp",
+  "24: Search_an_element_in_an_array.cpp",
+  "25: Check_if_Array_is_a_subset_of_another_array_or_not.cpp"
+];
+    const questionList = document.getElementById("question-list");
+
+    // Load the checklist state from local storage
+    function loadChecklist() {
+      const storedState = JSON.parse(localStorage.getItem("checklistState")) || [];
+
+      questions.forEach((question, index) => {
+        const div = document.createElement("div");
+        div.className = "question";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.id = `question-${index}`;
+        checkbox.checked = storedState[index] || false;
+        checkbox.addEventListener("change", saveChecklist);
+
+        const label = document.createElement("label");
+        label.htmlFor = `question-${index}`;
+        label.textContent = question;
+
+        div.appendChild(checkbox);
+        div.appendChild(label);
+        questionList.appendChild(div);
+      });
+    }
+
+    // Save the checklist state to local storage
+    function saveChecklist() {
+      const checkboxes = document.querySelectorAll("#question-list input[type='checkbox']");
+      const state = Array.from(checkboxes).map((checkbox) => checkbox.checked);
+      localStorage.setItem("checklistState", JSON.stringify(state));
+    }
+
+    // Initialize the checklist
+    loadChecklist();
+  </script>
+</body>
+</html>

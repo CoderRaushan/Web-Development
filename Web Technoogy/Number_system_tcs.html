@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tcs 25 Number System questions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 50%;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .question {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .question input {
+      margin-right: 10px;
+    }
+
+    .question label {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .reset-btn {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .reset-btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Question Checklist</h1>
+    <div id="question-list"></div>
+  </div>
+
+  <script>
+    const questions = [
+  "1. Check_if_a_number_is_palindrome_or_not.cpp",
+  "2. Find_all_palindrome_numbers_in_a_given_range.cpp",
+  "3. Check_if_a_number_is_prime_or_not.cpp",
+  "4. Prime_numbers_in_a_given_range.cpp",
+  "5. Check_if_a_number_is_armstrong_number_or_not.cpp",
+  "6. Check_if_a_number_is_perfect_number.cpp",
+  "7. Even_or_Odd.cpp",
+  "8. Check_whether_a_given_number_is_positive_or_negative.cpp",
+  "9. Sum_of_first_N_natural_numbers.cpp",
+  "10. Find_sum_of_AP_series.cpp",
+  "11. Program_to_find_sum_of_GP_series.cpp",
+  "12. Greatest_of_two_numbers.cpp",
+  "13. Greatest_of_three_numbers.cpp",
+  "14. Leap_Year_or_not.cpp",
+  "15. Reverse_digits_of_a_number.cpp",
+  "16. Maximum_and_minimum_digit_in_a_number.cpp",
+  "17. Print_Fibonacci_upto_Nth_term.cpp",
+  "18. Factorial_of_a_number.cpp",
+  "19. Power_of_a_number.cpp",
+  "20. Factors_of_a_given_number.cpp",
+  "21. Print_all_prime_factors_of_the_given_number.cpp",
+  "22. Check_if_a_number_is_a_strong_number_or_not.cpp",
+  "23. Check_if_a_number_is_Automorphic.cpp",
+  "24. GCD_of_two_numbers.cpp",
+  "25. LCM_of_two_numbers.cpp",
+  "26. Check_if_a_number_is_Harshad_number.cpp",
+  "27. Check_if_the_number_is_abundant_number_or_not.cpp",
+  "28. Sum_of_digits_of_a_number.cpp",
+  "29. Sum_of_numbers_in_the_given_range.cpp",
+  "30. Permutations_in_which_N_people_can_occupy_R_seats_in_a_classroom.cpp",
+  "31. Program_to_add_two_fractions.cpp",
+  "32. Replace_all_0s_with_1s_in_a_given_integer.cpp",
+  "33. Can_a_number_be_expressed_as_a_sum_of_two_prime_numbers.cpp",
+  "34. Calculate_the_area_of_a_circle.cpp",
+  "35. Program_to_find_roots_of_a_quadratic_equation.cpp"
+];
+    const questionList = document.getElementById("question-list");
+
+    // Load the checklist state from local storage
+    function loadChecklist() {
+      const storedState = JSON.parse(localStorage.getItem("numbersSystem_tcs")) || [];
+
+      questions.forEach((question, index) => {
+        const div = document.createElement("div");
+        div.className = "question";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.id = `question-${index}`;
+        checkbox.checked = storedState[index] || false;
+        checkbox.addEventListener("change", saveChecklist);
+
+        const label = document.createElement("label");
+        label.htmlFor = `question-${index}`;
+        label.textContent = question;
+
+        div.appendChild(checkbox);
+        div.appendChild(label);
+        questionList.appendChild(div);
+      });
+    }
+
+    // Save the checklist state to local storage
+    function saveChecklist() {
+      const checkboxes = document.querySelectorAll("#question-list input[type='checkbox']");
+      const state = Array.from(checkboxes).map((checkbox) => checkbox.checked);
+      localStorage.setItem("numbersSystem_tcs", JSON.stringify(state));
+    }
+
+    // Initialize the checklist
+    loadChecklist();
+  </script>
+</body>
+</html>

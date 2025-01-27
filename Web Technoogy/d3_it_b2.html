@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3 IT B2 Timetable</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap:1rem;
+            background-color: black;
+            color: white;
+        }
+
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            font-size: 1rem;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>D3 IT B2 Timetable</h1>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Monday 🙂</th>
+            <th>Tuesday 😐</th>
+            <th>Wednesday 😔</th>
+            <th>Thursday 😢</th>
+            <th>Friday 😄</th>
+        </tr>
+        <tr>
+            <td>08:30</td>
+            <td>OEI (F-109)</td>
+            <td style="background-color: #87CEEB; color: black;">E2(MEAN_Lab) (HPC_Lab)</td>
+            <td>OEI (F-109)</td>
+            <td style="background-color:red ; color: white;">DevOps T (HW_Lab)</td>
+            <td>OE1 (F-114T)</td>
+        </tr>
+        <tr>
+            <td>09:30</td>
+            <td>MEAN (S-214)</td>
+            <td style="background-color: #87CEEB; color: black;">MEAN_Lab (HPC_Lab)</td>
+            <td>MEAN (S-214)</td>
+            <td>IML G13</td>
+            <td style="background-color:red ; color: white;">DAA T (S-214)</td>
+        </tr>
+        <tr>
+            <td>10:30</td>
+            <td>IML (G-13)</td>
+            <td>DAA (S-214)</td>
+            <td>IML (G-13)</td>
+            <td>MEAN G13</td>
+            <td>DevOps (G-13)</td>
+        </tr>
+        <tr>
+            <td>11:30</td>
+            <td>OB (S-213)</td>
+            <td style="background-color:red ; color: white;">IML T (G-13)</td>
+            <td>OB (G-12)</td>
+            <td style="background-color: #32CD32; color: white">----</td>
+            <td style="background-color: #FFA500 ; color: black;">Lunch</td>
+        </tr>
+        <tr>
+            <td>12:30</td>
+            <td>DAA (S-213)</td>
+            <td style="background-color: #FFA500 ; color: black;">Lunch</td>
+            <td style="background-color: #FFA500 ; color: black;">Lunch</td>
+            <td style="background-color: #32CD32; color: white">Lunch
+            </td>
+            <td style="background-color: #87CEEB; color: black;">DAA_Lab (OS1_Lab)</td>
+        </tr>
+        <tr>
+            <td>1:30</td>
+            <td style="background-color: #FFA500 ; color: black;">Lunch</td>
+            <td>DevOps (G12)</td>
+            <td>DevOps (S-214)</td>
+            <td>DAA (S-214)</td>
+            <td style="background-color: #87CEEB; color: black;">DAA_Lab (OS1_Lab)</td>
+        </tr>
+        <tr>
+            <td>2:30</td>
+            <td style="background-color: #32CD32; color: white">----</td>
+            <td style="background-color: #32CD32; color: white">Minor INCH (G-12)</td>
+            <td style="background-color: #87CEEB; color: black;">IML_Lab (OS1_Lab)</td>
+            <td style="background-color: #87CEEB; color: black;">DevOps_Lab (WD_Lab)</td>
+            <td>MC (G12)</td>
+        </tr>
+        <tr>
+            <td>3:30</td>
+            <td style="background-color: #32CD32; color: white">-----</td>
+            <td style="background-color: #32CD32; color: white">Minor</td>
+            <td style="background-color: #87CEEB; color: black;">IML_Lab (OS1_Lab)</td>
+            <td style="background-color: #87CEEB; color: black;">DevOps_Lab (WD_Lab)</td>
+            <td style="background-color: #32CD32; color: white">----</td>
+        </tr>
+    </table>
+    <div class="COLOR_CONMBINATION_DABBAA" style="display: flex;flex-direction: row; gap: 10px;">
+        <div class="D1" style="height: 50px;width: 100px;background-color: black; display: flex;
+    justify-content: center;
+    align-items: center;color: white;border: 2px solid white;
+    ">
+            Lecture
+        </div>
+        <div class="D2" style="height: 50px;width: 100px;background-color:#87CEEB; display: flex;
+    justify-content: center;
+    align-items: center;color: black;
+    border: 2px solid yellow;
+    ">
+            Lab
+        </div>
+        <div class="D3" style="height: 50px;width: 100px;background-color: #FFA500; display: flex;
+    justify-content: center;
+    align-items: center;color: black;
+    border: 2px solid white;
+    ">
+            Lunch
+        </div>
+        <div class="D4" style="height: 50px;width: 100px;background-color: red; display: flex;
+        justify-content: center;
+        align-items: center;color: white;
+        border: 2px solid white;
+        ">
+                Tute
+            </div>
+            <div class="D5" style="height: 50px;width: 100px;background-color: #32CD32; display: flex;
+        justify-content: center;
+        align-items: center;color: black;
+        border: 2px solid white;
+        ">
+                Free Period
+            </div>
+            <div class="D6" style="height: 50px;width: 100px;background-color: #142794; display: flex;
+        justify-content: center;
+        align-items: center;color: white;
+        border: 2px solid white;
+        ">
+                Minor
+            </div>
+    </div>
+</body>
+
+</html>
